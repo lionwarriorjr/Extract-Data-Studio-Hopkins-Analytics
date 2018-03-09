@@ -11,9 +11,9 @@ def main():
     df = pd.read_csv(sys.stdin)
     # get relevant data
     for index, row in df.iterrows():
-        if row["events"] in atBat:
+        if row["event"] in atBat:
             ab += 1
-            if row["events"] in onBase:
+            if row["event"] in onBase:
                 ob += 1
 
     obp = ob / ab
