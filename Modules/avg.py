@@ -10,9 +10,9 @@ def main():
     df = pd.read_csv(sys.stdin)
     # get relevant data
     for index, row in df.iterrows():
-        if row["events"] in atBat:
+        if row["event"] in atBat:
             ab += 1
-            if row["events"] in hit:
+            if row["event"] in hit:
                 hits += 1
     avg = hits / ab
     sys.stdout.write("%.3f" % avg)
