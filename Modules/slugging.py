@@ -9,15 +9,15 @@ def main():
     df = pd.read_csv(sys.stdin)
     # get relevant data
     for index, row in df.iterrows():
-        if row["events"] in atBat:
+        if row["event"] in atBat:
             ab += 1
-            if row["events"] == "single":
+            if row["event"] == "single":
                 hits += 1
-            if row["events"] == "double":
+            if row["event"] == "double":
                 hits += 2
-            if row["events"] == "triple":
+            if row["event"] == "triple":
                 hits += 3
-            if row["events"] == "home_run":
+            if row["event"] == "home_run":
                 hits += 4
     slg = hits / ab
     sys.stdout.write("%.3f" % slg)
