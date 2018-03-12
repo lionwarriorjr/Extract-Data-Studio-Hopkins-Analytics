@@ -2,8 +2,8 @@ import pandas as pd
 import sys
 
 def main():
-    atBat = ["single", "double", "triple", "home_run", "field_out",
-    "strikeout", "grounded_into_double_play", "force_out"]
+    atBat = ["Single", "Double", "Triple", "Home Run", "Field Out",
+    "Strikeout", "Grounded Into Double Play", "Force Out"]
     hits = 0
     ab = 0
     df = pd.read_csv(sys.stdin)
