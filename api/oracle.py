@@ -110,7 +110,8 @@ class Oracle:
                             dist_plot = False
 
             if plot_l and dist_plot: # if calculated results are returned, generate the plot
-                plot = self.automate_plot_by_(names, plot_l, entity, title, 'bar')
+                plot = pd.DataFrame({'x': names, 'y': plot_l})
+                #plot = self.automate_plot_by_(names, plot_l, entity, title, 'bar')
                 status = False # set time_series plot status to False
 
         else: # otherwise plot time series by default
@@ -134,7 +135,8 @@ class Oracle:
 
                 if plot_l:
                     # plot time series chart
-                    plot = self.automate_plot_by_(names, plot_l, entity, title, 'scatter')
+                    plot = pd.DataFrame({'x': names, 'y': plot_l})
+                    #plot = self.automate_plot_by_(names, plot_l, entity, title, 'scatter')
 
         return result, plot, status
     
