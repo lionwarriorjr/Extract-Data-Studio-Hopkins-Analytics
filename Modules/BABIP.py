@@ -2,9 +2,9 @@ import pandas as pd
 import sys
 
 def main():
-    hit = ["single", "double", "triple"]
-    atBat = ["single", "double", "triple", "field_out",
-    "grounded_into_double_play", "force_out", "sac_fly"]
+    hit = ["Single", "Double", "Triple"]
+    atBat = ["Single", "Double", "Triple", "Field Out",
+    "Grounded Into Double Play", "Force Out", "Sac Fly", "Sac Bunt"]
     hits = 0
     ab = 0
     df = pd.read_csv(sys.stdin)

@@ -2,10 +2,10 @@ import pandas as pd
 import sys
 
 def main():
-    onBase = ["single", "double", "triple", "home_run", "walk", "hit_by_pitch", "intent_walk"]
-    atBat = ["single", "double", "triple", "home_run", "field_out",
-    "strikeout", "grounded_into_double_play", "force_out", "hit_by_pitch", "sac_fly"
-    "walk", "intent_walk"]
+    onBase = ["Single", "Double", "Triple", "Home Run", "Walk", "Hit By Pitch", "Intent Walk"]
+    atBat = ["Single", "Double", "Triple", "Home Run", "Field Out",
+    "Strikeout", "Grounded Into Double Play", "Force Out", "Hit By Pitch", "Sac Fly"
+    "Walk", "Intent Walk", "Sac Bunt"]
     ob = 0
     ab = 0
     df = pd.read_csv(sys.stdin)
