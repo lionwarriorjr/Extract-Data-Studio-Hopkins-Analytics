@@ -142,6 +142,7 @@ class Oracle:
 
                 if plot_l:
                     # plot time series chart
+                    names = [str(name) for names in names]
                     plot = self.react_conversion(names, plot_l)
                     #plot = pd.DataFrame({'x': names, 'y': plot_l})
                     #plot = self.automate_plot_by_(names, plot_l, entity, title, 'scatter')
