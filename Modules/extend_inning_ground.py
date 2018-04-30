@@ -9,8 +9,8 @@ def main():
     ball = False
     batter_up = 0
     inning = 0
-    # df = pd.read_csv(sys.stdin)
-    df = pd.read_csv("2017.csv")
+    df = pd.read_csv(sys.stdin)
+    #df = pd.read_csv("2017.csv")
     for index, row in df.iterrows():
         if ball == True:
             if batter_up != row["at_bat_id"]: # make sure it was last pitch of the at bat
