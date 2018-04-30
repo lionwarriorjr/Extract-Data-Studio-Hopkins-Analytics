@@ -2,8 +2,8 @@ import pandas as pd
 import sys
 
 def main():
-    bat_type = "line drive"
-    out_type = "lines out"
+    bat_type = "line_drive"
+    out_type = "lines_out"
     extend_inning = 0
     total = 0
     ball = False
