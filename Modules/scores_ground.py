@@ -9,8 +9,8 @@ def main():
     batter_up = 0
     score = 0
     runs = 0
-    # df = pd.read_csv(sys.stdin)
-    df = pd.read_csv("2017.csv")
+    df = pd.read_csv(sys.stdin)
+    #df = pd.read_csv("2017.csv")
     for index, row in df.iterrows():
         if ball == True:
             if batter_up != row["at_bat_id"]: #confirms we were on last pitch
