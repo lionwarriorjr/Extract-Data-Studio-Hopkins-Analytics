@@ -3,7 +3,7 @@ import sys
 
 def main():
     bat_type = "popup"
-    out_type = "pops out"
+    out_type = "pops_out"
     extend_inning = 0
     total = 0
     ball = False
