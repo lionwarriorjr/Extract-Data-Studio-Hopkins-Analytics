@@ -30,7 +30,7 @@ def main():
             # possbile TODO: account for right/left hitters
             x = row["px"]
             z = row["pz"]
-            if x < 1.25 or x > 1.25:
+            if x < -1.25 or x > 1.25:
                 horiz = 3
             if -1.25 < x < 0:
                 horiz = 1
