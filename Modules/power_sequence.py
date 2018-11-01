@@ -57,7 +57,6 @@ def main():
             event = row["event"]
 
     # best power sequence
-    best_power_sequence = max(pitches.items(), key=lambda k: k[1])
     sys.stdout.write(str(pitches.most_common(1)[0][0]))
 
 
