@@ -20,8 +20,8 @@ def main():
                 # this foor loop will only run once.
                 for s in swing:
                     swings[s]+=1
-                # increment total swings
-                total+=1
+                    # increment total swings
+                    total+=1
             batter_up = row["at_bat_id"]
         # parse where to swing
         swing = ""
