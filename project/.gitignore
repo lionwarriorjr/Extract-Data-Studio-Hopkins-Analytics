@@ -1,0 +1,7 @@
+*.pyc
+backend/static/bundles/local/
+node_modules/
+webpack-stats-local.json
+venv/
+.idea/
+dataset/
