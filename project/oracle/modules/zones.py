@@ -36,23 +36,23 @@ class ClassifyZones(Module):
                 if x<-1 or x>1:
                     horiz = 9
                 if -1<x<-0.75:
-                    horiz = 1
-                if -0.75<x<-0.5:
-                    horiz = 2
-                if -0.5<x<-0.25:
-                    horiz = 3
-                if -0.25<x<0:
-                    horiz = 4
-                if 0<x<0.25:
-                    horiz = 5
-                if 0.25<x<0.5:
-                    horiz = 6
-                if 0.5<x<0.75:
-                    horiz = 7
-                if 0.75<x< 1.0:
                     horiz = 8
+                if -0.75<x<-0.5:
+                    horiz = 7
+                if -0.5<x<-0.25:
+                    horiz = 6
+                if -0.25<x<0:
+                    horiz = 5
+                if 0<x<0.25:
+                    horiz = 4
+                if 0.25<x<0.5:
+                    horiz = 3
+                if 0.5<x<0.75:
+                    horiz = 2
+                if 0.75<x< 1.0:
+                    horiz = 1
 
-                if z<1.5 or z>3.0:
+                if z<1.5 or z>3.5:
                     vert = 9
                 if 1.5<z<1.75:
                     vert = 1
@@ -76,7 +76,7 @@ class ClassifyZones(Module):
                 if (horiz,vert) == (3,7):
                     zone = 1
                 if (horiz,vert) == (2,6):
-                    zone - 1
+                    zone = 1
                 if (horiz,vert) == (3,6):
                     zone = 1
 
@@ -244,8 +244,10 @@ class ClassifyZones(Module):
             for zone in pitches:
                 for pitch_type in pitches[zone]:
                     mapped_df = pitches_mapped_to_zones[zone][pitch_type]
-                    pitches_mapped_to_zones[zone][pitch_type] = mapped_df.assign(zone=zone)
-                    pitches_mapped_to_zones[zone][pitch_type] = mapped_df.assign(color=None)
+                    pitches_mapped_to_zones[zone][pitch_type]['zone_hopkins'] = zone
+                    #pitches_mapped_to_zones[zone][pitch_type] = mapped_df.assign(zone_hopkins=zone)
+                    pitches_mapped_to_zones[zone][pitch_type]['color'] = ''
+                    #pitches_mapped_to_zones[zone][pitch_type] = mapped_df.assign(color=None)
 
             # goes through each zone and pitch_type in that zone and sees if it should be green, yellow, red or nothing.
             output = {}
@@ -259,14 +261,17 @@ class ClassifyZones(Module):
                     swing_miss = pitches[zone][pitch_type]['swing_miss']
                     total = hits + outs + swing_miss
                     if total > 3:
-                        if swing_miss/total > .7:
-                            pitches_mapped_to_zones[zone][pitch_type] = mapped_df.assign(color='green')
+                        if swing_miss/total > .8:
+                            pitches_mapped_to_zones[zone][pitch_type]['color'] = 'green'
+                            #pitches_mapped_to_zones[zone][pitch_type] = mapped_df.assign(color='green')
                             output[zone].append("green " + pitch_type)
-                        elif (swing_miss + outs)/total > .7:
-                            pitches_mapped_to_zones[zone][pitch_type] = mapped_df.assign(color='yellow')
+                        elif (swing_miss + outs)/total > .8:
+                            pitches_mapped_to_zones[zone][pitch_type]['color'] = 'yellow'
+                            #pitches_mapped_to_zones[zone][pitch_type] = mapped_df.assign(color='yellow')
                             output[zone].append("yellow " + pitch_type)
-                        elif hits/total > .7:
-                            pitches_mapped_to_zones[zone][pitch_type] = mapped_df.assign(color='red')
+                        elif hits/total > .8:
+                            pitches_mapped_to_zones[zone][pitch_type]['color'] = 'red'
+                            #pitches_mapped_to_zones[zone][pitch_type] = mapped_df.assign(color='red')
                             output[zone].append("red " + pitch_type)
                         output_df = output_df.append(pitches_mapped_to_zones[zone][pitch_type])
 

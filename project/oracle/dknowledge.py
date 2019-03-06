@@ -10,7 +10,6 @@ import re
 import itertools
 import jellyfish
 from functools import reduce
-import plotly
 from oracle.modules.module import Module
 from oracle.modules.strikerate import StrikeRate
 from oracle.modules.obp import OBP
@@ -30,9 +29,7 @@ from oracle.recommendations.recommendation import Recommendation
 
 class Config:
 
-    def __init__(self, username, api_key, desc_filename):
-
-        self.set_credentials(username, api_key)
+    def __init__(self, desc_filename):
 
         self.X = pd.read_csv(desc_filename, encoding='latin1', low_memory=False)  # store initialized table at start
         self.init_default_preprocessing()
@@ -120,9 +117,6 @@ class Config:
         self.relations = {}
         for name in desc_filename_hash:
             self.relations[name] = pd.read_csv(desc_filename_hash[name])
-
-    def set_credentials(self, username, api_key):
-        plotly.tools.set_credentials_file(username=username, api_key=api_key)
 
     def set_keywords(self):
         keywords = defaultdict(str)
