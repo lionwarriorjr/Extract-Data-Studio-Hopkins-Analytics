@@ -64,23 +64,42 @@ for i in range(len(input)):
         index = i + 1
         number = len(input[i])
         print('i is {0} and number is {1}'.format(index,number))
+        #10-16
         if(index>= 10 and index <= 16):
             part = index - 10
             new_input = [x.split(' ') for x in input[i]]
             if(number == 1):
-                list.ellipse([dist_to_edge + part * small_box_length, dist_to_top, dist_to_edge + (part+1) * small_box_length, dist_to_top + small_box_length], outline = 'black',fill=new_input[0][0])
+                list.ellipse([dist_to_edge + part * small_box_length, dist_to_top, dist_to_edge + (part+1/2) * small_box_length, dist_to_top + 1/2 * small_box_length], outline = 'black',fill=new_input[0][0])
+                list.text([dist_to_edge + part * small_box_length, dist_to_top], fill = 'black',text=new_input[0][1])
             elif(number == 2):
                 list.ellipse([dist_to_edge + part * small_box_length, dist_to_top, dist_to_edge + (part+1/2) * small_box_length, dist_to_top + 1/2 * small_box_length], outline = 'black',fill=new_input[0][0])
                 list.ellipse([dist_to_edge + (part+1/2) * small_box_length, dist_to_top+ 1/2 * small_box_length, dist_to_edge + (part+1) * small_box_length, dist_to_top + small_box_length], outline = 'black',fill=new_input[1][0])
+                list.text([dist_to_edge + part * small_box_length, dist_to_top], fill = 'black',text=new_input[0][1])
+                list.text([dist_to_edge + (part+1/2) * small_box_length, dist_to_top+ 1/2 * small_box_length], fill = 'black',text=new_input[1][1])
+            
+            
             elif(number == 3):
                 list.ellipse([dist_to_edge + part * small_box_length, dist_to_top, dist_to_edge + (part+1/2) * small_box_length, dist_to_top + 1/2 * small_box_length], outline = 'black',fill=new_input[0][0])
                 list.ellipse([dist_to_edge + (part + 1/2) * small_box_length, dist_to_top, dist_to_edge + (part+1) * small_box_length, dist_to_top + 1/2 * small_box_length], outline = 'black',fill=new_input[1][0])
                 list.ellipse([dist_to_edge + (part + 1/2) * small_box_length, dist_to_top+ 1/2 * small_box_length, dist_to_edge + (part+1) * small_box_length, dist_to_top + small_box_length], outline = 'black',fill=new_input[2][0])
+                list.text([dist_to_edge + part * small_box_length, dist_to_top], fill = 'black',text=new_input[0][1])
+                list.text([dist_to_edge + (part + 1/2) * small_box_length, dist_to_top], fill = 'black',text=new_input[1][1])
+                list.text([dist_to_edge + (part + 1/2) * small_box_length, dist_to_top+ 1/2 * small_box_length], fill = 'black',text=new_input[2][1])
+           
+           
             elif(number == 4):
                 list.ellipse([dist_to_edge + part * small_box_length, dist_to_top, dist_to_edge + (part+1/2) * small_box_length, dist_to_top + 1/2 * small_box_length], outline = 'black',fill=new_input[0][0])
                 list.ellipse([dist_to_edge + (part + 1/2) * small_box_length, dist_to_top, dist_to_edge + (part+1) * small_box_length, dist_to_top + 1/2 * small_box_length], outline = 'black',fill=new_input[1][0])
                 list.ellipse([dist_to_edge + part * small_box_length, dist_to_top+ 1/2 * small_box_length, dist_to_edge + (part+1/2) * small_box_length, dist_to_top + small_box_length], outline = 'black',fill=new_input[2][0])
                 list.ellipse([dist_to_edge + (part + 1/2) * small_box_length, dist_to_top+ 1/2 * small_box_length, dist_to_edge + (part+1) * small_box_length, dist_to_top + small_box_length], outline = 'black',fill=new_input[3][0])
+                list.text([dist_to_edge + part * small_box_length, dist_to_top], fill = 'black',text=new_input[0][1])
+                list.text([dist_to_edge + (part + 1/2) * small_box_length, dist_to_top], fill = 'black',text=new_input[1][1])
+                list.text([dist_to_edge + part * small_box_length, dist_to_top+ 1/2 * small_box_length], fill = 'black',text=new_input[2][1])
+                list.text([dist_to_edge + (part + 1/2) * small_box_length, dist_to_top+ 1/2 * small_box_length], fill = 'black',text=new_input[3][1])
+            
+            
+            
+            
             else:
                 print ("This is not a valid input")
 
@@ -90,19 +109,39 @@ for i in range(len(input)):
             part = index - 17
             new_input = [x.split(' ') for x in input[i]]
             if(number == 1):
-                list.ellipse([dist_to_edge + 7 * small_box_length, dist_to_top + part * small_box_length, dist_to_edge + 8 * small_box_length, dist_to_top + (part+1) * small_box_length], outline = 'black',fill=new_input[0][0])
+                list.ellipse([dist_to_edge + 7 * small_box_length, dist_to_top + part * small_box_length, dist_to_edge + (7+1/2) * small_box_length, dist_to_top + (part +1/2) * small_box_length], outline = 'black',fill=new_input[0][0])
+                list.text([dist_to_edge + 7 * small_box_length, dist_to_top + part * small_box_length], fill = 'black',text=new_input[0][1])
+            
             elif(number == 2):
                 list.ellipse([dist_to_edge + 7 * small_box_length, dist_to_top + part * small_box_length, dist_to_edge + (7+1/2) * small_box_length, dist_to_top + (part +1/2) * small_box_length], outline = 'black',fill=new_input[0][0])
                 list.ellipse([dist_to_edge + (7+1/2) * small_box_length, dist_to_top+ (part+1/2) * small_box_length, dist_to_edge + 8 * small_box_length, dist_to_top + (part + 1) * small_box_length], outline = 'black',fill=new_input[1][0])
+                list.text([dist_to_edge + 7 * small_box_length, dist_to_top + part * small_box_length], fill = 'black',text=new_input[0][1])
+                list.text([dist_to_edge + (7+1/2) * small_box_length, dist_to_top+ (part+1/2) * small_box_length], fill = 'black',text=new_input[1][1])
+            
+            
+            
             elif(number == 3):
                 list.ellipse([dist_to_edge + 7 * small_box_length, dist_to_top + part * small_box_length, dist_to_edge + (7+1/2) * small_box_length, dist_to_top + (part +1/2) * small_box_length], outline = 'black',fill=new_input[0][0])
                 list.ellipse([dist_to_edge + (7 + 1/2) * small_box_length, dist_to_top+ (part+1/2) * small_box_length, dist_to_edge + 8 * small_box_length, dist_to_top + (part + 1) * small_box_length], outline = 'black',fill=new_input[1][0])
                 list.ellipse([dist_to_edge + (7 + 1/2) * small_box_length, dist_to_top + part * small_box_length, dist_to_edge + 8 * small_box_length, dist_to_top + (part+ 1/2) * small_box_length], outline = 'black',fill=new_input[2][0])
+                list.text([dist_to_edge + 7 * small_box_length, dist_to_top + part * small_box_length], fill = 'black',text=new_input[0][1])
+                list.text([dist_to_edge + (7 + 1/2) * small_box_length, dist_to_top+ (part+1/2) * small_box_length], fill = 'black',text=new_input[1][1])
+                list.text([dist_to_edge + (7 + 1/2) * small_box_length, dist_to_top + part * small_box_length], fill = 'black',text=new_input[2][1])
+            
+            
             elif(number == 4):
                 list.ellipse([dist_to_edge + 7 * small_box_length, dist_to_top + part * small_box_length, dist_to_edge + (7+1/2) * small_box_length, dist_to_top + (part +1/2) * small_box_length], outline = 'black',fill=new_input[0][0])
                 list.ellipse([dist_to_edge + (7 + 1/2) * small_box_length, dist_to_top+ (part+1/2) * small_box_length, dist_to_edge + 8 * small_box_length, dist_to_top + (part + 1) * small_box_length], outline = 'black',fill = new_input[1][0])
                 list.ellipse([dist_to_edge + (7 + 1/2) * small_box_length, dist_to_top + part * small_box_length, dist_to_edge + 8 * small_box_length, dist_to_top + (part+ 1/2) * small_box_length], outline = 'black',fill=new_input[2][0])
                 list.ellipse([dist_to_edge + 7 * small_box_length, dist_to_top + (part + 1/2) * small_box_length, dist_to_edge + (7 + 1/2) * small_box_length, dist_to_top + (part + 1 ) *small_box_length], outline = 'black',fill=new_input[3][0])
+                list.text([dist_to_edge + 7 * small_box_length, dist_to_top + part * small_box_length], fill = 'black',text=new_input[0][1])
+                list.text([dist_to_edge + (7 + 1/2) * small_box_length, dist_to_top+ (part+1/2) * small_box_length], fill = 'black',text = new_input[1][1])
+                list.text([dist_to_edge + (7 + 1/2) * small_box_length, dist_to_top + part * small_box_length], fill = 'black',text=new_input[2][1])
+                list.text([dist_to_edge + 7 * small_box_length, dist_to_top + (part + 1/2) * small_box_length], fill = 'black',text=new_input[3][1])
+            
+            
+            
+            
             else:
                 print ("This is not a valid input")
         
@@ -111,19 +150,39 @@ for i in range(len(input)):
             part = index - 24
             new_input = [x.split(' ') for x in input[i]]
             if(number == 1):
-                list.ellipse([dist_to_edge + (7-part) * small_box_length, dist_to_top + 7* small_box_length, dist_to_edge + (8-part) * small_box_length, dist_to_top + 8 * small_box_length], outline = 'black',fill=new_input[0][0])
+                list.ellipse([dist_to_edge + (7- part) * small_box_length, dist_to_top + 7* small_box_length, dist_to_edge + (7-part+1/2) * small_box_length, dist_to_top + (7+1/2) * small_box_length], outline = 'black',fill=new_input[0][0])
+                list.text([dist_to_edge + (7-part) * small_box_length, dist_to_top + 7* small_box_length], fill = 'black',text=new_input[0][1])
+            
+            
             elif(number == 2):
                 list.ellipse([dist_to_edge + (7- part) * small_box_length, dist_to_top + 7* small_box_length, dist_to_edge + (7-part+1/2) * small_box_length, dist_to_top + (7+1/2) * small_box_length], outline = 'black',fill=new_input[0][0])
                 list.ellipse([dist_to_edge + (7-part+1/2) * small_box_length, dist_to_top+ (7+1/2) * small_box_length, dist_to_edge + (7-part+1) * small_box_length, dist_to_top + 8 * small_box_length], outline = 'black',fill=new_input[1][0])
+                list.text([dist_to_edge + (7- part) * small_box_length, dist_to_top + 7* small_box_length], fill = 'black',text=new_input[0][1])
+                list.text([dist_to_edge + (7-part+1/2) * small_box_length, dist_to_top+ (7+1/2) * small_box_length], fill = 'black',text=new_input[1][1])
+           
+           
             elif(number == 3):
                 list.ellipse([dist_to_edge + (7- part) * small_box_length, dist_to_top + 7* small_box_length, dist_to_edge + (7-part+1/2) * small_box_length, dist_to_top + (7+1/2) * small_box_length], outline = 'black',fill=new_input[0][0])
                 list.ellipse([dist_to_edge + (7-part+1/2) * small_box_length, dist_to_top+ (7+1/2) * small_box_length, dist_to_edge + (7-part+1) * small_box_length, dist_to_top + 8 * small_box_length], outline = 'black',fill=new_input[1][0])
                 list.ellipse([dist_to_edge + (7-part+1/2) * small_box_length, dist_to_top+ 7 * small_box_length, dist_to_edge + (7-part+1) * small_box_length, dist_to_top + (7+1/2 ) *small_box_length], outline = 'black',fill=new_input[2][0])
+                list.text([dist_to_edge + (7- part) * small_box_length, dist_to_top + 7* small_box_length], fill = 'black',text=new_input[0][1])
+                list.text([dist_to_edge + (7-part+1/2) * small_box_length, dist_to_top+ (7+1/2) * small_box_length], fill = 'black',text=new_input[1][1])
+                list.text([dist_to_edge + (7-part+1/2) * small_box_length, dist_to_top+ 7 * small_box_length], fill = 'black',text=new_input[2][1])
+            
+            
             elif(number == 4):
                 list.ellipse([dist_to_edge + (7- part) * small_box_length, dist_to_top + 7* small_box_length, dist_to_edge + (7-part+1/2) * small_box_length, dist_to_top + (7+1/2) * small_box_length], outline = 'black',fill=new_input[0][0])
                 list.ellipse([dist_to_edge + (7-part+1/2) * small_box_length, dist_to_top+ (7+1/2) * small_box_length, dist_to_edge + (7-part+1) * small_box_length, dist_to_top + 8 * small_box_length], outline = 'black',fill=new_input[1][0])
                 list.ellipse([dist_to_edge + (7-part+1/2) * small_box_length, dist_to_top+ 7 * small_box_length, dist_to_edge + (7-part+1) * small_box_length, dist_to_top + (7+1/2 ) *small_box_length], outline = 'black',fill=new_input[2][0])
                 list.ellipse([dist_to_edge + (7 - part) * small_box_length, dist_to_top+ (7+1/2) * small_box_length, dist_to_edge + (7-part+1/2) * small_box_length, dist_to_top + 8* small_box_length], outline = 'black',fill=new_input[3][0])
+                list.text([dist_to_edge + (7- part) * small_box_length, dist_to_top + 7* small_box_length], fill = 'black',text=new_input[0][1])
+                list.text([dist_to_edge + (7-part+1/2) * small_box_length, dist_to_top+ (7+1/2) * small_box_length], fill = 'black',text=new_input[1][1])
+                list.text([dist_to_edge + (7-part+1/2) * small_box_length, dist_to_top+ 7 * small_box_length], fill = 'black',text=new_input[2][1])
+                list.text([dist_to_edge + (7 - part) * small_box_length, dist_to_top+ (7+1/2) * small_box_length], fill = 'black',text=new_input[3][1])
+            
+            
+            
+            
             else:
                 print ("This is not a valid input")
         
@@ -133,83 +192,161 @@ for i in range(len(input)):
             part = index - 31
             new_input = [x.split(' ') for x in input[i]]
             if(number == 1):
-                list.ellipse([dist_to_edge, dist_to_top + (7-part)*small_box_length, dist_to_edge + small_box_length, dist_to_top + (8-part) * small_box_length], outline = 'black',fill=new_input[0][0])
+                list.ellipse([dist_to_edge, dist_to_top + (7-part)*small_box_length, dist_to_edge + 1/2 * small_box_length, dist_to_top +(7 - part + 1/2) * small_box_length], outline = 'black',fill=new_input[0][0])
+                list.text([dist_to_edge, dist_to_top + (7-part)*small_box_length], fill = 'black',text=new_input[0][1])
+            
+            
+            
             elif(number == 2):
                 list.ellipse([dist_to_edge, dist_to_top + (7-part)*small_box_length, dist_to_edge + 1/2 * small_box_length, dist_to_top +(7 - part + 1/2) * small_box_length], outline = 'black',fill=new_input[0][0])
                 list.ellipse([dist_to_edge + (1/2) * small_box_length, dist_to_top+ (7 - part + 1/2) * small_box_length, dist_to_edge + small_box_length, dist_to_top + (8-part) * small_box_length], outline = 'black',fill=new_input[1][0])
+                list.text([dist_to_edge, dist_to_top + (7-part)*small_box_length], fill = 'black',text=new_input[0][1])
+                list.text([dist_to_edge + (1/2) * small_box_length, dist_to_top+ (7 - part + 1/2) * small_box_length], fill = 'black',text=new_input[1][1])
+            
+            
+            
             elif(number == 3):
 
                 list.ellipse([dist_to_edge, dist_to_top + (7-part)*small_box_length, dist_to_edge + 1/2 * small_box_length, dist_to_top +(7 - part + 1/2) * small_box_length], outline = 'black',fill=new_input[0][0])
                 list.ellipse([dist_to_edge + (1/2) * small_box_length, dist_to_top+ (7 - part + 1/2) * small_box_length, dist_to_edge + small_box_length, dist_to_top + (8-part) * small_box_length], outline = 'black',fill=new_input[1][0])
                 list.ellipse([dist_to_edge + (1/2) * small_box_length, dist_to_top+ (7 - part) * small_box_length, dist_to_edge + small_box_length, dist_to_top + (7- part + 1/2) * small_box_length], outline = 'black',fill=new_input[2][0])
+                list.text([dist_to_edge, dist_to_top + (7-part)*small_box_length], fill = 'black',text=new_input[0][1])
+                list.text([dist_to_edge + (1/2) * small_box_length, dist_to_top+ (7 - part + 1/2) * small_box_length], fill = 'black',text=new_input[1][1])
+                list.text([dist_to_edge + (1/2) * small_box_length, dist_to_top+ (7 - part) * small_box_length], fill = 'black',text=new_input[2][1])
+            
+            
+            
             elif(number == 4):
                 list.ellipse([dist_to_edge, dist_to_top + (7-part)*small_box_length, dist_to_edge + 1/2 * small_box_length, dist_to_top +(7 - part + 1/2) * small_box_length], outline = 'black',fill=new_input[0][0])
                 list.ellipse([dist_to_edge + (1/2) * small_box_length, dist_to_top+ (7 - part + 1/2) * small_box_length, dist_to_edge + small_box_length, dist_to_top + (8-part) * small_box_length], outline = 'black',fill=new_input[1][0])
                 list.ellipse([dist_to_edge + (1/2) * small_box_length, dist_to_top+ (7 - part) * small_box_length, dist_to_edge + small_box_length, dist_to_top + (7- part + 1/2) * small_box_length], outline = 'black',fill=new_input[2][0])
                 list.ellipse([dist_to_edge, dist_to_top+ (7-part + 1/2) * small_box_length, dist_to_edge + 1/2 * small_box_length, dist_to_top + (8-part) * small_box_length], outline = 'black',fill=new_input[3][0])
+                list.text([dist_to_edge, dist_to_top + (7-part)*small_box_length], fill = 'black',text=new_input[0][1])
+                list.text([dist_to_edge + (1/2) * small_box_length, dist_to_top+ (7 - part + 1/2) * small_box_length], fill = 'black',text=new_input[1][1])
+                list.text([dist_to_edge + (1/2) * small_box_length, dist_to_top+ (7 - part) * small_box_length], fill = 'black',text=new_input[2][1])
+                list.text([dist_to_edge, dist_to_top+ (7-part + 1/2) * small_box_length], fill = 'black',text=new_input[3][1])
+            
+            
+            
+            
+            
             else:
                 print ("This is not a valid input")
         
-        
+        #1-3
         elif(index >=1 and index <= 3):
             part = index - 1
             new_input = [x.split(' ') for x in input[i]]
             if(number == 1):
-                list.ellipse([dist_to_edge + small_box_length + part * median_box_length, dist_to_top + small_box_length, dist_to_edge + small_box_length + (part +1) * median_box_length, dist_to_top + small_box_length + median_box_length], outline = 'black',fill = new_input[0][0])
-                list.text((dist_to_edge + 2* small_box_length + part * median_box_length, dist_to_top + 2 * small_box_length), text = new_input[0][1],fill = 'black')
+                list.ellipse([dist_to_edge + small_box_length + part * median_box_length, dist_to_top + small_box_length, dist_to_edge + small_box_length + (part +1/2) * median_box_length, dist_to_top + small_box_length + 1/2 * median_box_length], outline = 'black',fill= new_input[0][0])
+                list.text((dist_to_edge + 1.25* small_box_length + part * median_box_length, dist_to_top + 1.25 * small_box_length), text = new_input[0][1],fill = 'black')
             elif(number == 2):
                 list.ellipse([dist_to_edge + small_box_length + part * median_box_length, dist_to_top + small_box_length, dist_to_edge + small_box_length + (part +1/2) * median_box_length, dist_to_top + small_box_length + 1/2 * median_box_length], outline = 'black',fill= new_input[0][0])
                 list.ellipse([dist_to_edge + small_box_length + (part + 1/2) * median_box_length, dist_to_top + small_box_length + 1/2* median_box_length, dist_to_edge + small_box_length+ (part+1) * median_box_length, dist_to_top + small_box_length + median_box_length], outline = 'black', fill= new_input[1][0])
+                list.text([dist_to_edge + 1.25 * small_box_length + part * median_box_length, dist_to_top + 1.25*small_box_length], fill = 'black',text= new_input[0][1])
+                list.text([dist_to_edge + 1.25 * small_box_length + (part + 1/2) * median_box_length, dist_to_top + small_box_length + 1/2* median_box_length], fill = 'black', text= new_input[1][1])
+            
             elif(number == 3):
                 list.ellipse([dist_to_edge + small_box_length + part * median_box_length, dist_to_top + small_box_length, dist_to_edge + small_box_length + (part +1/2) * median_box_length, dist_to_top + small_box_length + 1/2 * median_box_length], outline = 'black',fill= new_input[0][0])
                 list.ellipse([dist_to_edge + small_box_length + (part + 1/2) * median_box_length, dist_to_top + small_box_length + 1/2* median_box_length, dist_to_edge + small_box_length+ (part+1) * median_box_length, dist_to_top + small_box_length + median_box_length], outline = 'black',fill=new_input[1][0])
                 list.ellipse([dist_to_edge + small_box_length + (part + 1/2) * median_box_length, dist_to_top + small_box_length, dist_to_edge + small_box_length + (part +1) * median_box_length, dist_to_top + small_box_length + 1/2 * median_box_length], outline = 'black',fill=new_input[2][0])
+                list.text([dist_to_edge +1.25 * small_box_length + part * median_box_length, dist_to_top +1.25 * small_box_length], fill = 'black',text= new_input[0][1])
+                list.text([dist_to_edge +1.25 * small_box_length + (part + 1/2) * median_box_length, dist_to_top +1.25 * small_box_length + 1/2* median_box_length], fill = 'black',text=new_input[1][1])
+                list.text([dist_to_edge +1.25 * small_box_length + (part + 1/2) * median_box_length, dist_to_top +1.25 * small_box_length], fill = 'black',text=new_input[2][1])
+            
+            
             elif(number == 4):
                 list.ellipse([dist_to_edge + small_box_length + part * median_box_length, dist_to_top + small_box_length, dist_to_edge + small_box_length + (part +1/2) * median_box_length, dist_to_top + small_box_length + 1/2 * median_box_length], outline = 'black',fill=new_input[0][0])
-                list.text((dist_to_edge + small_box_length + part * median_box_length, dist_to_top + small_box_length), text = new_input[0][1] )
                 list.ellipse([dist_to_edge + small_box_length + (part + 1/2) * median_box_length, dist_to_top + small_box_length + 1/2* median_box_length, dist_to_edge + small_box_length+ (part+1) * median_box_length, dist_to_top + small_box_length + median_box_length], outline = 'black',fill=new_input[1][0])
                 list.ellipse([dist_to_edge + small_box_length + (part + 1/2) * median_box_length, dist_to_top + small_box_length, dist_to_edge + small_box_length + (part +1) * median_box_length, dist_to_top + small_box_length + 1/2 * median_box_length], outline = 'black',fill=new_input[2][0])
                 list.ellipse([dist_to_edge + small_box_length + part * median_box_length, dist_to_top + small_box_length + 1/2 * median_box_length, dist_to_edge + small_box_length + (part + 1/2 )* median_box_length, dist_to_top + small_box_length + median_box_length], outline = 'black',fill=new_input[3][0])            
+                list.text([dist_to_edge +1.25 *  small_box_length + part * median_box_length, dist_to_top +1.25 *  small_box_length], fill = 'black',text=new_input[0][1])
+                list.text([dist_to_edge +1.25 *  small_box_length + (part + 1/2) * median_box_length, dist_to_top +1.25 *  small_box_length + 1/2* median_box_length], fill = 'black',text=new_input[1][1])
+                list.text([dist_to_edge +1.25 *  small_box_length + (part + 1/2) * median_box_length, dist_to_top + 1.25 * small_box_length], fill = 'black',text=new_input[2][1])
+                list.text([dist_to_edge +1.25 *  small_box_length + part * median_box_length, dist_to_top + 1.25 * small_box_length + 1/2 * median_box_length], fill = 'black',text=new_input[3][1])            
+            
+            
             else:
                 print ("This is not a valid input")
        
+        # 4-6
         elif(index >=4 and index <=6):
             part = index -4
             new_input = [x.split(' ') for x in input[i]]
             if(number == 1):
-                list.ellipse([dist_to_edge + small_box_length + (2 - part) * median_box_length, dist_to_top + small_box_length + median_box_length, dist_to_edge + small_box_length + (3-part) * median_box_length, dist_to_top + small_box_length + 2 * median_box_length], outline = 'black', fill = new_input[0][0])
+                list.ellipse([dist_to_edge + small_box_length + (2 - part) * median_box_length, dist_to_top + small_box_length + median_box_length, dist_to_edge + small_box_length + (2 - part +1/2) * median_box_length, dist_to_top + small_box_length + 3/2 * median_box_length], outline = 'black', fill = new_input[0][0])
+                list.text([dist_to_edge + 1.25*small_box_length + (2 - part) * median_box_length, dist_to_top + 1.25*small_box_length + median_box_length], fill = 'black', text = new_input[0][1])
+            
             elif(number == 2):
                 list.ellipse([dist_to_edge + small_box_length + (2 - part) * median_box_length, dist_to_top + small_box_length + median_box_length, dist_to_edge + small_box_length + (2 - part +1/2) * median_box_length, dist_to_top + small_box_length + 3/2 * median_box_length], outline = 'black', fill = new_input[0][0])
                 list.ellipse([dist_to_edge + small_box_length + (2 - part + 1/2) * median_box_length, dist_to_top + small_box_length + 3/2* median_box_length, dist_to_edge + small_box_length+ (2- part+1) * median_box_length, dist_to_top + small_box_length + 2 * median_box_length], outline = 'black',fill = new_input[1][0])
+                list.text([dist_to_edge + 1.25*small_box_length + (2 - part) * median_box_length, dist_to_top + 1.25*small_box_length + median_box_length], fill = 'black', text = new_input[0][1])
+                list.text([dist_to_edge + 1.25*small_box_length + (2 - part + 1/2) * median_box_length, dist_to_top + 1.25*small_box_length + 3/2* median_box_length], outline = 'black',text = new_input[1][1])
+            
+            
+            
             elif(number == 3):
                 list.ellipse([dist_to_edge + small_box_length + (2 - part) * median_box_length, dist_to_top + small_box_length +median_box_length, dist_to_edge + small_box_length + (2 - part +1/2) * median_box_length, dist_to_top + small_box_length + 3/2 * median_box_length], outline = 'black',fill = new_input[0][0])
                 list.ellipse([dist_to_edge + small_box_length + (2 - part + 1/2) * median_box_length, dist_to_top + small_box_length + 3/2* median_box_length, dist_to_edge + small_box_length+ (2 - part+1) * median_box_length, dist_to_top + small_box_length + 2 * median_box_length], outline = 'black',fill = new_input[1][0])
                 list.ellipse([dist_to_edge + small_box_length + (2 - part + 1/2) * median_box_length, dist_to_top + small_box_length + median_box_length, dist_to_edge + small_box_length + (2 - part+1) * median_box_length, dist_to_top + small_box_length + 3/2 * median_box_length], outline = 'black', fill = new_input[2][0])
+                list.text([dist_to_edge + 1.25*small_box_length + (2 - part) * median_box_length, dist_to_top + 1.25*small_box_length +median_box_length], fill = 'black',text = new_input[0][1])
+                list.text([dist_to_edge + 1.25*small_box_length + (2 - part + 1/2) * median_box_length, dist_to_top + 1.25*small_box_length + 3/2* median_box_length], fill = 'black',text = new_input[1][1])
+                list.text([dist_to_edge + 1.25*small_box_length + (2 - part + 1/2) * median_box_length, dist_to_top + 1.25*small_box_length + median_box_length], fill = 'black', text = new_input[2][1])
+            
+            
+            
             elif(number == 4):
                 list.ellipse([dist_to_edge + small_box_length + (2-part) * median_box_length, dist_to_top + small_box_length + median_box_length, dist_to_edge + small_box_length + (2-part +1/2) * median_box_length, dist_to_top + small_box_length + 3/2 * median_box_length], outline = 'black',fill = new_input[0][0])
                 list.ellipse([dist_to_edge + small_box_length + (2-part + 1/2) * median_box_length, dist_to_top + small_box_length + 3/2* median_box_length, dist_to_edge + small_box_length+ (2-part+1) * median_box_length, dist_to_top + small_box_length + 2*median_box_length], outline = 'black',fill = new_input[1][0])
                 list.ellipse([dist_to_edge + small_box_length + (2-part + 1/2) * median_box_length, dist_to_top + small_box_length + median_box_length, dist_to_edge + small_box_length + (2-part+1) * median_box_length, dist_to_top + small_box_length + 3/2 * median_box_length], outline = 'black', fill = new_input[2][0])
                 list.ellipse([dist_to_edge + small_box_length + (2-part) * median_box_length, dist_to_top + small_box_length + 3/2 * median_box_length, dist_to_edge + small_box_length + (2-part + 1/2 )* median_box_length, dist_to_top + small_box_length + 2* median_box_length], outline = 'black', fill = new_input[3][0])            
+                list.text([dist_to_edge + 1.25*small_box_length + (2-part) * median_box_length, dist_to_top + 1.25*small_box_length + median_box_length], fill = 'black',text = new_input[0][1])
+                list.text([dist_to_edge + 1.25*small_box_length + (2-part + 1/2) * median_box_length, dist_to_top + 1.25*small_box_length + 3/2* median_box_length], fill = 'black',text = new_input[1][1])
+                list.text([dist_to_edge + 1.25*small_box_length + (2-part + 1/2) * median_box_length, dist_to_top + 1.25*small_box_length + median_box_length], fill = 'black', text = new_input[2][1])
+                list.text([dist_to_edge + 1.25*small_box_length + (2-part) * median_box_length, dist_to_top + 1.25*small_box_length + 3/2 * median_box_length], fill = 'black', text = new_input[3][1])            
+                 
             else:
                 print ("This is not a valid input")
         
+        #7-9
         elif(index >= 7 and index <= 9):
             part = index - 7
             new_input = [x.split(' ') for x in input[i]]
             if(number == 1):
-                list.ellipse([dist_to_edge + small_box_length + part * median_box_length, dist_to_top + small_box_length + 2*median_box_length, dist_to_edge + small_box_length + (part +1) * median_box_length, dist_to_top + small_box_length + 3 * median_box_length], outline = 'black',fill = new_input[0][0])
+                list.ellipse([dist_to_edge + small_box_length + part * median_box_length, dist_to_top + small_box_length + 2 * median_box_length, dist_to_edge + small_box_length + (part +1/2) * median_box_length, dist_to_top + small_box_length + 5/2 * median_box_length], outline = 'black', fill = new_input[0][0])
+                list.text([dist_to_edge + 1.25*small_box_length + part * median_box_length, dist_to_top + 1.25*small_box_length + 2 * median_box_length], fill = 'black', text = new_input[0][1])
+            
             elif(number == 2):
                 list.ellipse([dist_to_edge + small_box_length + part * median_box_length, dist_to_top + small_box_length + 2 * median_box_length, dist_to_edge + small_box_length + (part +1/2) * median_box_length, dist_to_top + small_box_length + 5/2 * median_box_length], outline = 'black', fill = new_input[0][0])
                 list.ellipse([dist_to_edge + small_box_length + (part + 1/2) * median_box_length, dist_to_top + small_box_length + 5/2* median_box_length, dist_to_edge + small_box_length+ (part+1) * median_box_length, dist_to_top + small_box_length + 3 * median_box_length], outline = 'black',fill = new_input[1][0])
+                list.text([dist_to_edge + 1.25*small_box_length + part * median_box_length, dist_to_top + 1.25*small_box_length + 2 * median_box_length], fill = 'black', text = new_input[0][1])
+                list.text([dist_to_edge + 1.25*small_box_length + (part + 1/2) * median_box_length, dist_to_top + 1.25*small_box_length + 5/2* median_box_length], fill = 'black',text = new_input[1][1])
+            
+            
             elif(number == 3):
                 list.ellipse([dist_to_edge + small_box_length + part * median_box_length, dist_to_top + small_box_length + 2* median_box_length, dist_to_edge + small_box_length + (part +1/2) * median_box_length, dist_to_top + small_box_length + 5/2 * median_box_length], outline = 'black',fill = new_input[0][0])
                 list.ellipse([dist_to_edge + small_box_length + (part + 1/2) * median_box_length, dist_to_top + small_box_length + 5/2* median_box_length, dist_to_edge + small_box_length+ (part+1) * median_box_length, dist_to_top + small_box_length + 3 * median_box_length], outline = 'black', fill = new_input[1][0])
                 list.ellipse([dist_to_edge + small_box_length + (part + 1/2) * median_box_length, dist_to_top + small_box_length + 2 * median_box_length, dist_to_edge + small_box_length + (part+1) * median_box_length, dist_to_top + small_box_length + 5/2 * median_box_length], outline = 'black',fill = new_input[2][0])
+                list.text([dist_to_edge + 1.25*small_box_length + part * median_box_length, dist_to_top + 1.25*small_box_length + 2* median_box_length], fill = 'black',text = new_input[0][1])
+                list.text([dist_to_edge + 1.25*small_box_length + (part + 1/2) * median_box_length, dist_to_top + 1.25*small_box_length + 5/2* median_box_length], fill = 'black', text = new_input[1][1])
+                list.text([dist_to_edge + 1.25*small_box_length + (part + 1/2) * median_box_length, dist_to_top + 1.25*small_box_length + 2 * median_box_length], fill = 'black',text = new_input[2][1])
+            
+            
+            
             elif(number == 4):
                 list.ellipse([dist_to_edge + small_box_length + part * median_box_length, dist_to_top + small_box_length +2 * median_box_length, dist_to_edge + small_box_length + (part +1/2) * median_box_length, dist_to_top + small_box_length + 5/2 * median_box_length], outline = 'black', fill = new_input[0][0])
                 list.ellipse([dist_to_edge + small_box_length + (part + 1/2) * median_box_length, dist_to_top + small_box_length + 5/2* median_box_length, dist_to_edge + small_box_length+ (part+1) * median_box_length, dist_to_top + small_box_length + 3*median_box_length], outline = 'black',fill = new_input[1][0])
                 list.ellipse([dist_to_edge + small_box_length + (part + 1/2) * median_box_length, dist_to_top + small_box_length + 2 * median_box_length, dist_to_edge + small_box_length + (part+1) * median_box_length, dist_to_top + small_box_length + 5/2 * median_box_length], outline = 'black', fill = new_input[2][0])
                 list.ellipse([dist_to_edge + small_box_length + part * median_box_length, dist_to_top + small_box_length + 5/2 * median_box_length, dist_to_edge + small_box_length + (part + 1/2 )* median_box_length, dist_to_top + small_box_length + 3* median_box_length], outline = 'black', fill = new_input[3][0])            
+                list.text([dist_to_edge + 1.25*small_box_length + part * median_box_length, dist_to_top + 1.25*small_box_length +2 * median_box_length], fill = 'black', text = new_input[0][1])
+                list.text([dist_to_edge + 1.25*small_box_length + (part + 1/2) * median_box_length, dist_to_top + 1.25*small_box_length + 5/2* median_box_length], fill = 'black',text = new_input[1][1])
+                list.text([dist_to_edge + 1.25*small_box_length + (part + 1/2) * median_box_length, dist_to_top +1.25* small_box_length + 2 * median_box_length], fill = 'black', text = new_input[2][1])
+                list.text([dist_to_edge + 1.25*small_box_length + part * median_box_length, dist_to_top + 1.25*small_box_length + 5/2 * median_box_length], fill = 'black', text = new_input[3][1])            
+            
+            
+            
+            
+            
             else:
                 print ("This is not a valid input")
 
