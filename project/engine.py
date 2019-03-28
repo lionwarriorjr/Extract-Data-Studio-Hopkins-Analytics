@@ -1029,15 +1029,15 @@ class Oracle:
 
         for token in tokens:
 
-            mkeys = config.module_hash.keys()
+            mkeys = self.config.module_hash.keys()
 
             for mkey in mkeys:
 
                 jaro = jellyfish.jaro_distance(token, mkey)
 
-                if jaro > config.MODULE_PARSING_THRESHOLD:
+                if jaro > self.config.MODULE_PARSING_THRESHOLD:
 
-                    matches = config.module_hash[mkey]
+                    matches = self.config.module_hash[mkey]
 
                     for match in matches:
                         candidates[match].add(mkey)
@@ -1046,7 +1046,7 @@ class Oracle:
         for module in candidates:
 
             mset = candidates[module]
-            keys = config.modules_reversed[module]
+            keys = self.config.modules_reversed[module]
 
             for key in keys:
                 combined = set()
@@ -1054,7 +1054,7 @@ class Oracle:
                 combined |= set(keyset)
                 combined &= mset
 
-                if len(combined)/len(keyset) > config.CONF_THRESHOLD:
+                if len(combined)/len(keyset) > self.config.CONF_THRESHOLD:
                     result.add(module)
 
         clookup  = {k: v for k, v in clookup.items() if k in result}
@@ -1407,6 +1407,7 @@ def main():
     # plot_type is string ('time-series', 'bar', 'png') indicating what plot to make
     # rterms is python list of relevance feedback query suggestions
     result, sample_size, data, plot_type, rterms = oracle.run(qry)
+    print('executed oracle to completion')
 
 if __name__ == "__main__":
     main()
